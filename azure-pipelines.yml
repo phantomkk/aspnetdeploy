@@ -43,5 +43,19 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    dotnet build "PipelineAspnetAPI\PipelineAspnetAPI.csproj" --configuration $(buildConfig)
+  
+    #dotnet build "PipelineAspnetAPI\PipelineAspnetAPI.csproj" --configuration $(buildConfig)
   displayName: 'Run a multi-line script and build'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore project dependencies'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build the project'
+  inputs:
+    command: 'build'
+    arguments: '--no-restore --configuration Release'
+    projects: '**/*.csproj'
