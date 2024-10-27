@@ -72,3 +72,18 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+
+# - task: AzureWebApp@1
+#   inputs:
+#    azureSubscription: '16b1ea78-e3de-4cff-b96a-cc72c07c4519'
+#    appType: webApp
+#    appName: 'testpipeline2024'
+#    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(16b1ea78-e3de-4cff-b96a-cc72c07c4519)'
+    appType: 'webApp'
+    WebAppName: 'testpipeline2024'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
