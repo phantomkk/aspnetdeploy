@@ -9,8 +9,27 @@ trigger:
 pool:
   vmImage: windows-2019
 
+variables:
+  buildConfig: 'Release'
+
+# task: DotNetCoreCLI@2
+#   displayName: 'Build the project'
+#   inputs:
+#     command: 'build'
+#     arguments: '--no-restore --configuration Release'
+#     projects: '**/*.csproj'
+
+# task: testdeploy@1
+#   inputs:
+#     azureSubscription: 'Pay-As-You-Go'
+#     appType: 'webApp'
+#     appName: 'myWebAppName'
+#     deployToSlotOrASE: true
+#     resourceGroupName: 'myResourceGroup'
+#     slotName: 'staging'
+#     deploymentMethod: 'auto'
 steps:
-- script: echo Hello, world!
+- script: echo Hello, world! $(buildConfig)
   displayName: 'Run a one-line script'
 
 - script: |
