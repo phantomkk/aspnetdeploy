@@ -43,5 +43,5 @@ steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    dotnet build --configuration $(buildConfig)
+    dotnet build "PipelineAspnetAPI\PipelineAspnetAPI.csproj" --configuration $(buildConfig)
   displayName: 'Run a multi-line script and build'
