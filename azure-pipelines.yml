@@ -29,7 +29,7 @@ variables:
 #     slotName: 'staging'
 #     deploymentMethod: 'auto'
 steps:
-- script: echo Hello, world! $(buildConfig)
+- script: echo Hello, world! $(buildConfig) and path $(Build.SourcesDirectory) 
   displayName: 'Run a one-line script'
 
 - script: |
