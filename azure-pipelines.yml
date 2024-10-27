@@ -65,13 +65,7 @@ steps:
   inputs:
     command: 'publish'
     projects: '**/*.csproj'
-    publishWebProjects: false
-    arguments: '--no-build --configuration Release --output $(Build.ArtifactStagingDirectory)/Release'
-    zipAfterPublish: true
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
+    publishWebProjects: true
 
 # - task: AzureWebApp@1
 #   inputs:
@@ -86,5 +80,5 @@ steps:
     azureSubscription: 'Pay-As-You-Go(16b1ea78-e3de-4cff-b96a-cc72c07c4519)'
     appType: 'webApp'
     WebAppName: 'testpipeline2024'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     
