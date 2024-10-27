@@ -86,5 +86,5 @@ steps:
     azureSubscription: 'Pay-As-You-Go(16b1ea78-e3de-4cff-b96a-cc72c07c4519)'
     appType: 'webApp'
     WebAppName: 'testpipeline2024'
-    packageForLinux: '$(System.ArtifactStagingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
     
