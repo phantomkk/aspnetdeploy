@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "v+EVKsVNoJ8ICI0GrDgCFCLKF9lKA1PRLq8veIJhsxI=",
+  "Source": "PipelineAspnetAPI",
+  "BasePath": "_content/PipelineAspnetAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
